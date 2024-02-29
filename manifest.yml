@@ -1,0 +1,23 @@
+modules:
+  jira:projectPage:
+    - key: ai-assistant-epics-project-page
+      resource: epicslist
+      resolver:
+        function: resolver
+      title: AI Assistant
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: epicslist
+    path: static/EpicsProjectPage/build
+    tunnel:
+      port: 3000
+permissions:
+  content:
+    styles:
+      - "unsafe-inline"
+app:
+  id: ari:cloud:ecosystem::app/a08fb9be-ee8c-470e-bf62-f1ba80707f26
+  runtime:
+    name: nodejs18.x
